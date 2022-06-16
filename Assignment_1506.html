@@ -4,7 +4,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link ref="stylesheet" href="./css_part.css" type="text/css">
     <link rel="stylesheet" href="./bootstrap-4.6.1-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
@@ -16,12 +15,14 @@
     <style type="text/css">
         .column_img {
             height: auto;
-            width: 100%;
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
         }
 
         /* Column part css setting below */
         .pleft {
-            padding-left: 12px;
+            padding-left: 24px;
         }
 
         .pright {
@@ -37,9 +38,9 @@
         }
 
         /* Column 2 about orientation date */
-        .column_line_img {
+        .img-fluid {
             height: auto;
-            width: 200px;
+            max-width: 100%;
         }
 
         .background_color {
@@ -51,22 +52,47 @@
         }
 
         .card {
-        margin: 0 auto; /* Added */
-        float: none; /* Added */
-        margin-bottom: 10px; /* Added */
-        height:auto;
+            margin: 0 auto;
+            /* Added */
+            float: none;
+            /* Added */
+            margin-bottom: 10px;
+            /* Added */
+            height: auto;
         }
+
         .card-text {
-            padding-left: 16px; 
-            padding-top: 16px; 
+            padding-left: 16px;
+            padding-top: 16px;
         }
 
         .card-textbt {
-            padding-bottom: 24px; 
+            padding-bottom: 24px;
         }
+
         .card-textmd {
-            padding-top: 8px; 
-            padding-bottom: 8px; 
+            padding-top: 8px;
+            padding-bottom: 8px;
+        }
+
+
+
+        /* visible&invisible */
+        .visible {
+            visibility: visible;
+        }
+
+        .invisible {
+            visibility: hidden;
+        }
+
+        // Usage as a mixin
+        .element {
+            @include invisible(visible);
+        }
+
+        .element {
+            @include invisible(hidden);
         }
     </style>
 </head>
@@ -100,12 +126,12 @@
         </ul>
     </nav>
     <!-- the first colunm on the page below -->
-    <div class="container-fluid ptop pbottom bg-secondary">
+    <div class="container-fluid ptop pbottom pright pleft bg-secondary">
         <div class="row justify-content-center justify-items-center align-items-center">
             <div class="col-md-7">
-                <img class="column_img pright pleft" src="./capstone_colmar_assets/images/banner.jpg" alt="banner">
+                <img class="column_img" src="./capstone_colmar_assets/images/banner.jpg" alt="banner">
             </div>
-            <div class="col-md-5 pright pleft">
+            <div class="col-md-5">
                 <h2 class="text-center">Learn Something new everyday</h2>
                 <h4>Lorem ipsum dolor sit amet,consecterur adipiscing elit.</h4>
                 <button type="button" class="btn btn-primary btn-md bg-dark btn-block">Start here</button>
@@ -118,18 +144,18 @@
             <div class="col-12 col-md-7">
                 <img class="column_img pright pleft" src="./capstone_colmar_assets/images/information-main.jpg"
                     alt="information-main">
-                <h2 class="ptop">It doesn't hurt to keep practicing</h2>
+                <h2 class="ptop text-left">It doesn't hurt to keep practicing</h2>
                 <p>"Curabitur viitae libero in ipsum porttitor consequat.Aliquam et commodo lectus,nec consequat
                     neque.Sed non accumsan urna.Phasellus sed consequat ex,Etiam eget magna laoreet,efficitur dolor
                     conwequat,trisptique ligula."</p>
                 <p class="ptop pbottom">Emanuel.Sr Strategist at Hiring.com</p>
             </div>
 
-            <div class="col-12 col-md-5">
-                <div class="row row justify-content-center justify-items-center align-items-center">
-                    <div class="col-md-4 border-1">
+            <div class="col-12 col-md-5 border">
+                <div class="row row justify-content-center justify-items-center align-items-center border">
+                    <div class="col-md-4">
                         <!-- Orientation date below -->
-                        <img class="column_line_img mx-auto d-block ptop_bottom"
+                        <img class="img-fluid mx-auto d-block ptop_bottom"
                             src="./capstone_colmar_assets/images/information-orientation.jpg" alt="Orientation date">
                     </div>
                     <div class="col-md-8">
@@ -138,11 +164,10 @@
                         <a href="#">Read more</a>
                     </div>
                 </div>
-
-                <div class="row justify-content-center justify-items-center align-items-center">
-                    <div class="col-md-4 border-1">
+                <div class="row justify-content-center justify-items-center align-items-center border">
+                    <div class="col-md-4">
                         <!-- Orientation date below -->
-                        <img class="column_line_img mx-auto d-block ptop_bottom"
+                        <img class="img-fluid mx-auto d-block ptop_bottom"
                             src="./capstone_colmar_assets/images/information-campus.jpg" alt="Orientation date">
                     </div>
                     <div class="col-md-8">
@@ -151,12 +176,10 @@
                         <a href="#">Read more</a>
                     </div>
                 </div>
-
-
-                <div class="row justify-content-center justify-items-center align-items-center">
+                <div class="row justify-content-center justify-items-center align-items-center border">
                     <div class="col-md-4 border-1">
                         <!-- Orientation date below -->
-                        <img class="column_line_img mx-auto d-block ptop_bottom"
+                        <img class="img-fluid mx-auto d-block ptop_bottom"
                             src="./capstone_colmar_assets/images/information-guest-lecture.jpg" alt="Orientation date">
                     </div>
                     <div class="col-md-8">
@@ -173,10 +196,10 @@
     <!-- the third column on the page below la -->
     <div class="container-fluid bg-secondary ptop pbottom">
         <h2 class="ptop pbottom text-center">Start learning</h2>
-        <div class="row justify-content-center justify-items-center align-items-center">
+        <div class="row justify-content-center justify-items-center align-items-center row-eq-height">
             <!-- 6 cards the first row below (1) -->
             <div class="col-md-4 pbottom">
-                <div class="card" >
+                <div class="card">
                     <img class="card-img-top mx-auto d-block" src="./capstone_colmar_assets/images/course-software.jpg"
                         alt="Card image cap">
                     <div class="card-body">
@@ -185,6 +208,7 @@
                         <p class="card-text card-textbt">Web Development,Mobile Development,iOT,APIs</p>
                     </div>
                 </div>
+                <button type="button" class="btn btn-secondary">Software</button>
             </div>
             <!-- 6 cards the first row below (2) -->
             <div class="col-md-4 pbottom">
@@ -194,7 +218,8 @@
                     <div class="card-body">
                         <h5 class="card-title">Computer art</h5>
                         <p>COURSES</p>
-                        <p class="card-text card-textbt">Imaging & Design,Web Design,Motion Graphics & Visual Effect,Computer
+                        <p class="card-text card-textbt">Imaging & Design,Web Design,Motion Graphics & Visual
+                            Effect,Computer
                             Animation</p>
                     </div>
                 </div>
@@ -213,7 +238,7 @@
             </div>
         </div>
         <!-- 6 cards the second row below (4) -->
-        <div class="row justify-content-center justify-items-center align-items-center">
+        <div class="row justify-content-center justify-items-center align-items-center ">
             <div class="col-md-4">
                 <div class="card">
                     <img class="card-img-top" src="./capstone_colmar_assets/images/course-data.jpg"
@@ -252,60 +277,201 @@
             </div>
         </div>
     </div>
-
-    <!-- the Fourth column on the page below la -->
-    <div class="container-fluid bg-light">
-        <h2 class="ptop pbottom text-center">Thesis exhibit</h2>
-        <!-- mp4 video below -->
-        <div class="row justify-content-center justify-items-center align-items-center">
-            <div class="col-12 col-md-7">
-                <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="./capstone_colmar_assets/videos/thesis.mp4"
-                        allowfullscreen></iframe>
-                </div>
-                <h2 class="ptop">Reimagine urban</h2>
-                <p>"Curabitur viitae libero in ipsum porttitor consequat.Aliquam et commodo lectus,nec consequat
-                    neque.Sed non accumsan urna.Phasellus sed consequat ex,Etiam eget magna laoreet,efficitur dolor
-                    conwequat,trisptique ligula."</p>
-                <p class="ptop pbottom">Emanuel.Sr Strategist at Hiring.com</p>
+    <!-- phone size of cards test -->
+    <!-- first buttom-->
+    <div id="accordion">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                        aria-controls="collapseOne">
+                        Software engineerin
+                    </button>
+                </h5>
             </div>
 
-            <div class="col-12 col-md-5">
-                <div class="row row justify-content-center justify-items-center align-items-center">
-                   <div class="col-md-4 border-1">
-                        <!-- Fisma:Design and Prototype below -->
-                        <img class="column_line_img mx-auto d-block ptop_bottom"
-                            src="./capstone_colmar_assets/images/thesis-fisma.jpg" alt="Fisma:Design and Prototype">
-                   </div>
-            
-                   <div class="col-md-8">
-                        <h4>Fisma:Design and Prototype</h4>
-                        <p>Designer showcase of new protoype product</p>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                    <img class="card-img-top mx-auto d-block" src="./capstone_colmar_assets/images/course-software.jpg"
+                        alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">Software engineering</h5>
+                        <p>COURSES</p>
+                        <p class="card-text card-textbt">Web Development,Mobile Development,iOT,APIs</p>
                     </div>
-               </div>     
-          
-
-                <div class="row justify-content-center justify-items-center align-items-center">
-                     <div class="col-md-4 border-1">
-                         <!-- Now and then below -->
-                          <img class="column_line_img mx-auto d-block ptop_bottom" src="./capstone_colmar_assets/images/thesis-now-and-then.jpg"
-                          alt="Now and then">
-                     </div>
-                
-                     <div class="col-md-8">
-                         <h4>Now and then</h4>
-                         <p>Research study about New Yourk</p>
-                     </div>   
                 </div>
-         </div>
-     </div>
- </div>  
-    <!-- Footer -->
-    <footer class="page-footer font-small">
-        <div class="footer-copyright text-left py-3">© 2016 Colmar Academy.All right reserve>
+            </div>
+            <!-- second buttom-->
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
+                            aria-expanded="false" aria-controls="collapseTwo">
+                            Computer art
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-Fparent="#accordion">
+                    <div class="card-body">
+                        <img class="card-img-top " src="./capstone_colmar_assets/images/course-computer-art.jpg"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Computer art</h5>
+                            <p>COURSES</p>
+                            <p class="card-text card-textbt">Imaging & Design,Web Design,Motion Graphics & Visual
+                                Effect,Computer
+                                Animation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- third buttom-->
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"
+                            aria-expanded="false" aria-controls="collapseThree">
+                            Design
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div class="card-body">
+                        <img class="card-img-top" src="./capstone_colmar_assets/images/course-design.jpg"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Design</h5>
+                            <p>COURSES</p>
+                            <p class="card-text card-textbt">User Experience Design,User Research,Visual Design</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- fourth buttom-->
+            <div class="card">
+                <div class="card-header" id="headingFour">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"
+                            aria-expanded="false" aria-controls="collapseThree">
+                            Data
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div class="card-body">
+                        <img class="card-img-top" src="./capstone_colmar_assets/images/course-data.jpg"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Data</h5>
+                            <p>COURSES</p>
+                            <p class="card-text card-textbt">Data Science,Big Data,SQL,Data Visualization</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- fifth buttom-->
+            <div class="card">
+                <div class="card-header" id="headingFive">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"
+                            aria-expanded="false" aria-controls="collapseThree">
+                            Bussiness
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div class="card-body">
+                        <img class="card-img-top" src="./capstone_colmar_assets/images/course-business.jpg"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Business</h5>
+                            <p>COURSES</p>
+                            <p class="card-text card-textbt">Product Development,Business Development,Startup</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- sixth buttom-->
+            <div class="card">
+                <div class="card-header" id="headingSix">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"
+                            aria-expanded="false" aria-controls="collapseThree">
+                            Marketing
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div class="card-body">
+                        <img class="card-img-top" src="./capstone_colmar_assets/images/course-marketing.jpg"
+                            alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Marketing</h5>
+                            <p>COURSES</p>
+                            <p class="card-text card-textbt">Analytics,Content Marketing,Mobile Marketing</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </footer>
-    <!-- Footer -->
+    </div>
+
+
+
+
+        <!-- the Fourth column on the page below la -->
+        <div class="container-fluid bg-light">
+            <h2 class="ptop pbottom text-center">Thesis exhibit</h2>
+            <!-- mp4 video below -->
+            <div class="row justify-content-center justify-items-center align-items-center">
+                <div class="col-12 col-md-7">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="./capstone_colmar_assets/videos/thesis.mp4"
+                            allowfullscreen></iframe>
+                    </div>
+                    <h2 class="ptop">Reimagine urban</h2>
+                    <p>"Curabitur viitae libero in ipsum porttitor consequat.Aliquam et commodo lectus,nec consequat
+                        neque.Sed non accumsan urna.Phasellus sed consequat ex,Etiam eget magna laoreet,efficitur dolor
+                        conwequat,trisptique ligula."</p>
+                    <p class="ptop pbottom">Emanuel.Sr Strategist at Hiring.com</p>
+                </div>
+
+                <div class="col-12 col-md-5">
+                    <div class="row row justify-content-center justify-items-center align-items-center border">
+                        <div class="col-md-4 border-1">
+                            <!-- Fisma:Design and Prototype below -->
+                            <img class="img-fluid mx-auto d-block ptop_bottom"
+                                src="./capstone_colmar_assets/images/thesis-fisma.jpg" alt="Fisma:Design and Prototype">
+                        </div>
+
+                        <div class="col-md-8">
+                            <h4>Fisma:Design and Prototype</h4>
+                            <p>Designer showcase of new protoype product</p>
+                        </div>
+                    </div>
+
+
+                    <div class="row justify-content-center justify-items-center align-items-center border">
+                        <div class="col-md-4 border-1">
+                            <!-- Now and then below -->
+                            <img class="img-fluid mx-auto d-block ptop_bottom"
+                                src="./capstone_colmar_assets/images/thesis-now-and-then.jpg" alt="Now and then">
+                        </div>
+
+                        <div class="col-md-8">
+                            <h4>Now and then</h4>
+                            <p>Research study about New York</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer -->
+        <footer class="page-footer font-small">
+            <div class="footer-copyright text-left py-3">© 2016 Colmar Academy.All right reserve>
+            </div>
+        </footer>
+        <!-- Footer -->
 </body>
 
 
