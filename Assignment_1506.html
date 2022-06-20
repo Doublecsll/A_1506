@@ -36,7 +36,10 @@
         .pbottom {
             padding-bottom: 32px;
         }
-
+        .pright-left {
+            padding-right: 16px;
+            padding-left: 16px;
+        }
         /* Column 2 about orientation date */
         .img-fluid {
             height: auto;
@@ -99,7 +102,7 @@
 <body style="height: 1500px">
     <!-- desktop navbars-->
     <div class="desktop">
-        <nav class="navbar navbar-light bg-White">
+        <nav class="navbar bg-White">
             <a class="navbar-brand" href="#">
                 <img src="./capstone_colmar_assets/images/ic-logo.svg" class="d-inline-block align-top"
                     alt="COLMARACADEMY">
@@ -123,8 +126,8 @@
     </div>
     <!-- mobile navbar -->
     <div class="mobile_device_576px">
-        <nav class="navbar navbar-light bg-White ptop pbottom" style="display: block;">
-            <ul class="nav justify-items-center">
+        <nav class="navbar bg-White ptop pbottom" style="display: block;">
+            <ul class="nav justify-content-between">
                 <li class="nav-item">
                     <a href="#">
                         <img src="./capstone_colmar_assets/images/ic-logo.svg" width="32" height="32" alt="ic-logo"></a>
@@ -164,14 +167,14 @@
     </div>
     <!-- the first colunm mobile on the page below -->
     <div class="mobile_device_576px">
-        <div class="container-fluid pbottom pright pleft bg-secondary">
+        <div class="container-fluid column_img pbottom pright pleft bg-secondary">
             <div class="row justify-content-center justify-items-center align-items-center">
-                <div class="col-md-7">
-                    <img class="column_img" src="./capstone_colmar_assets/images/banner.jpg" style="width: ;" alt="banner">
+                <div class="col-md-12">
+                    <img class="column_img" src="./capstone_colmar_assets/images/banner.jpg" alt="banner">
                 </div>
-                <div class="col-md-5">
-                    <h2 class="text-center">Learn Something new everyday</h2>
-                    <h4>Lorem ipsum dolor sit amet,consecterur adipiscing elit.</h4>
+                <div class="col-md-12">
+                    <h2 class="pright-left">Learn Something new everyday</h2>
+                    <h4 class="pright-left">Lorem ipsum dolor sit amet,consecterur adipiscing elit.</h4>
                     <button type="button" class="btn btn-primary btn-md bg-dark btn-block">Start here</button>
                 </div>
             </div>
@@ -192,7 +195,7 @@
                 </div>
 
                 <div class="col-12 col-md-5 border">
-                    <div class="row row justify-content-center justify-items-center align-items-center">
+                    <div class="row justify-content-center justify-items-center align-items-center">
                         <div class="col-md-4">
                             <!-- Orientation date below -->
                             <img class="img-fluid mx-auto d-block ptop_bottom"
@@ -247,7 +250,7 @@
                                 src="./capstone_colmar_assets/images/information-orientation-mobile.jpg"
                                 alt="Orientation date">
                         </div>
-                        <div class="col-md-8">
+                        <div class="col-md-8 pright-left">
                             <h4>Orientation date</h4>
                             <p>Tue 10/1 & Web 10/12: 8am-3pm</p>
                             <a href="#">Read more</a>
