@@ -17,7 +17,7 @@
             height: auto;
             max-width: 100%;
             margin: 0;
-            padding: 0;
+            padding: 0 !important;
         }
 
         /* Column part css setting below */
@@ -77,13 +77,13 @@
 
         /* if desktop */
 
-        .mobile_device_480px {
+        .mobile_device_576px {
             display: none;
         }
 
-        /* if mobile device max width 480px */
-        @media only screen and (max-device-width: 480px) {
-            .mobile_device_480px {
+        /* if mobile device max width 576px */
+        @media only screen and (max-device-width: 576px) {
+            .mobile_device_576px {
                 display: block;
             }
 
@@ -96,7 +96,7 @@
 
 
 
-<body>
+<body style="height: 1500px">
     <!-- desktop navbars-->
     <div class="desktop">
         <nav class="navbar navbar-light bg-White">
@@ -122,38 +122,58 @@
         </nav>
     </div>
     <!-- mobile navbar -->
-    <div class="mobile_device_480px">
-        <nav class="navbar navbar-light bg-White justify-content-space-between align-items-center" >
-            <ul class="nav" style="text-align: center;">
-                <li>
+    <div class="mobile_device_576px">
+        <nav class="navbar navbar-light bg-White ptop pbottom" style="display: block;">
+            <ul class="nav justify-items-center">
+                <li class="nav-item">
                     <a href="#">
                         <img src="./capstone_colmar_assets/images/ic-logo.svg" width="32" height="32" alt="ic-logo"></a>
                 </li>
-                <li>
+                <li class="nav-item">
                     <a href="#">
-                        <img src="./capstone_colmar_assets/images/ic-on-campus.svg" width="32" height="32" alt="ic-on-campus"></a>
+                        <img src="./capstone_colmar_assets/images/ic-on-campus.svg" width="32" height="32"
+                            alt="ic-on-campus"></a>
                 </li>
-                <li>
+                <li class="nav-item">
                     <a href="#">
-                        <img src="./capstone_colmar_assets/images/ic-online.svg" width="32" height="32" alt="ic-online"></a>
+                        <img src="./capstone_colmar_assets/images/ic-online.svg" width="32" height="32"
+                            alt="ic-online"></a>
                 </li>
-                <li>
+                <li class="nav-item">
                     <a href="#">
-                        <img src="./capstone_colmar_assets/images/ic-login.svg" width="32" height="32" alt="ic-login.svg"></a>
+                        <img src="./capstone_colmar_assets/images/ic-login.svg" width="32" height="32"
+                            alt="ic-login.svg"></a>
                 </li>
             </ul>
         </nav>
     </div>
     <!-- the first colunm on the page below -->
-    <div class="container-fluid ptop pbottom pright pleft bg-secondary">
-        <div class="row justify-content-center justify-items-center align-items-center">
-            <div class="col-md-7">
-                <img class="column_img" src="./capstone_colmar_assets/images/banner.jpg" alt="banner">
+    <div class="desktop">
+        <div class="container-fluid ptop pbottom pright pleft bg-secondary">
+            <div class="row justify-content-center justify-items-center align-items-center">
+                <div class="col-md-7">
+                    <img class="column_img" src="./capstone_colmar_assets/images/banner.jpg" alt="banner">
+                </div>
+                <div class="col-md-5">
+                    <h2 class="text-center">Learn Something new everyday</h2>
+                    <h4>Lorem ipsum dolor sit amet,consecterur adipiscing elit.</h4>
+                    <button type="button" class="btn btn-primary btn-md bg-dark btn-block">Start here</button>
+                </div>
             </div>
-            <div class="col-md-5">
-                <h2 class="text-center">Learn Something new everyday</h2>
-                <h4>Lorem ipsum dolor sit amet,consecterur adipiscing elit.</h4>
-                <button type="button" class="btn btn-primary btn-md bg-dark btn-block">Start here</button>
+        </div>
+    </div>
+    <!-- the first colunm mobile on the page below -->
+    <div class="mobile_device_576px">
+        <div class="container-fluid pbottom pright pleft bg-secondary">
+            <div class="row justify-content-center justify-items-center align-items-center">
+                <div class="col-md-7">
+                    <img class="column_img" src="./capstone_colmar_assets/images/banner.jpg" style="width: ;" alt="banner">
+                </div>
+                <div class="col-md-5">
+                    <h2 class="text-center">Learn Something new everyday</h2>
+                    <h4>Lorem ipsum dolor sit amet,consecterur adipiscing elit.</h4>
+                    <button type="button" class="btn btn-primary btn-md bg-dark btn-block">Start here</button>
+                </div>
             </div>
         </div>
     </div>
@@ -216,7 +236,7 @@
         </div>
     </div>
     <!-- the Second colunm on the page below mobile-->
-    <div class="mobile_device_480px">
+    <div class="mobile_device_576px">
         <div class="container-fluid ptop pbottom bg-light">
             <div class="row justify-content-center justify-items-center">
                 <div class="col-12 col-md-5 border">
@@ -355,9 +375,9 @@
     </div>
     <!-- phone size of cards test -->
     <!-- first buttom-->
-    <div class="mobile_device_480px">
-        <div class="container-fluid bg-secondary ptop pbottom">
-            <h2 class="ptop pbottom text-center">Start learning</h2>
+    <div class="mobile_device_576px">
+        <div class="container-fluid bg-secondary ptop pbottom text-center">
+            <h2 class="text-center">Start learning</h2>
             <!-- accordion -->
             <div id="accordion">
                 <!-- first buttom-->
@@ -549,15 +569,15 @@
         </div>
     </div>
 
-    <div class="mobile_device_480px">
+    <div class="mobile_device_576px">
         <div class="container-fluid bg-light">
             <h2 class="ptop pbottom text-center">Thesis exhibit</h2>
             <!-- mp4 video below -->
             <div class="row justify-content-center justify-items-center">
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe class="embed-responsive-item" src="./capstone_colmar_assets/videos/thesis.mp4"
-                            allowfullscreen></iframe>
-                    </div>             
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="./capstone_colmar_assets/videos/thesis.mp4"
+                        allowfullscreen></iframe>
+                </div>
             </div>
         </div>
     </div>
